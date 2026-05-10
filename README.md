@@ -31,10 +31,10 @@ I'm dedicated to writing clean, efficient code and creating meaningful projects.
 
 ## 📫 Get In Touch
 
-- **Email**: [Your Email](mailto:your.email@example.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- **Email**: [Your Email](mailto:contact@Ayoub.pw)
+- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/ayoub-k)
 - **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
-- **Website**: [Your Portfolio](https://yourwebsite.com)
+- **Website**: [Your Portfolio](https://ayoub.pw)
 
 ## 🎓 Learning & Growth
 
