@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayoub K. — Travel Advisor & Web Developer</title>
+<link rel="icon" href="https://ik.imagekit.io/imgayoub/LOGO/ayoub.pw%20logo%20many%20size/no%20background/android-chrome-192x192.png?updatedAt=1778461922147">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ═══ RESET & BASE ═══ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#040d06;color:#e2f0e5;font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* ═══ GRID BG ═══ */
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,83,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,83,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+
+/* ═══ CSS VARS ═══ */
+:root{
+  --p:#00c853;--p2:#00a040;--p3:#00ff6a;
+  --bg:#040d06;--bg2:#071209;--bg3:#0a1a0c;
+  --border:rgba(0,200,83,0.25);--border2:rgba(0,200,83,0.08);
+  --text:#e2f0e5;--muted:#4a6a50;--success:#00c853;
+  --red:#ef4444;--amber:#f59e0b;--blue:#60a5fa;
+  --font:'Syne',sans-serif;--mono:'DM Mono',monospace;
+}
+
+/* ═══ PUBLIC PAGE ═══ */
+#public-page{position:relative;z-index:1;min-height:100vh}
+
+/* NAV */
+.g-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 56px;border-bottom:1px solid var(--border2);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;background:rgba(4,13,6,0.9)}
+.g-logo-wrap{display:flex;align-items:center;gap:12px}
+.g-logo-img{width:34px;height:34px;object-fit:contain;border-radius:50%;border:1px solid var(--border);filter:drop-shadow(0 0 8px rgba(0,200,83,0.35))}
+.g-logo-text{font-family:var(--font);font-size:17px;font-weight:800;color:var(--text);letter-spacing:-0.5px}
+.g-logo-text span{color:var(--p)}
+.g-nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.g-nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.g-nav-links a:hover{color:var(--p)}
+.g-clock-nav{font-family:var(--mono);font-size:12px;color:var(--muted);padding:5px 12px;border:1px solid var(--border2);border-radius:2px}
+
+/* HERO */
+.g-hero{padding:80px 56px 64px;display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center;position:relative;z-index:1}
+.g-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:var(--p);border:1px solid var(--border);padding:6px 14px;border-radius:2px;margin-bottom:28px;letter-spacing:1.2px;background:rgba(0,200,83,0.04)}
+.g-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:gpulse 2s infinite}
+@keyframes gpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,200,83,0.5)}50%{box-shadow:0 0 0 8px rgba(0,200,83,0)}}
+.g-h1{font-size:clamp(44px,6vw,78px);font-weight:800;line-height:0.92;letter-spacing:-3px;color:#fff;margin-bottom:8px}
+.g-h1 em{font-style:normal;color:var(--p);display:block}
+.g-role{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1.5px;margin-bottom:22px;padding-top:6px}
+.g-desc{font-size:15px;color:rgba(226,240,229,0.65);line-height:1.75;max-width:460px;margin-bottom:36px}
+.g-btns{display:flex;gap:12px;flex-wrap:wrap}
+.g-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:3px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;font-family:var(--font)}
+.g-btn-p{background:var(--p);color:#020d04}
+.g-btn-p:hover{background:var(--p3);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,200,83,0.3)}
+.g-btn-g{background:transparent;color:var(--text);border:1px solid var(--border2)}
+.g-btn-g:hover{border-color:var(--border);color:var(--p);background:rgba(0,200,83,0.05)}
+
+/* PHOTO */
+.g-photo-frame{position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--border)}
+.g-photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(4,13,6,0.92) 100%);z-index:1;pointer-events:none}
+.g-photo-frame img{width:100%;height:430px;object-fit:cover;object-position:center top;display:block;filter:saturate(0.8) contrast(1.1)}
+.g-corner{position:absolute;width:18px;height:18px;border-color:var(--p);border-style:solid;z-index:2}
+.g-corner.tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.g-corner.tr{top:-1px;right:-1px;border-width:2px 2px 0 0}
+.g-corner.bl{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+.g-corner.br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.g-scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--p),transparent);opacity:0.5;animation:scan 4s ease-in-out infinite;z-index:3}
+@keyframes scan{0%{top:0;opacity:0}10%{opacity:0.5}90%{opacity:0.5}100%{top:100%;opacity:0}}
+.g-photo-label{position:absolute;bottom:16px;left:16px;right:16px;z-index:4}
+.g-photo-name{font-size:18px;font-weight:800;color:#fff}
+.g-photo-sub{font-family:var(--mono);font-size:10px;color:var(--p);letter-spacing:1.5px;margin-top:3px}
+
+/* SECTIONS */
+.g-sec{padding:56px;border-top:1px solid var(--border2);position:relative;z-index:1}
+.g-sec-label{font-family:var(--mono);font-size:10px;color:var(--p);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:32px;display:flex;align-items:center;gap:12px}
+.g-sec-label::after{content:'';flex:1;height:1px;background:var(--border2)}
+
+/* SKILLS */
+.g-skills{display:flex;flex-wrap:wrap;gap:8px}
+.g-skill{display:flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--border2);border-radius:3px;font-size:13px;color:var(--text);transition:all 0.2s;background:var(--bg2)}
+.g-skill:hover{border-color:var(--border);color:var(--p);background:rgba(0,200,83,0.05)}
+.g-skill i{font-size:15px;color:var(--p)}
+
+/* PROJECTS */
+.g-proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1px;border:1px solid var(--border2)}
+.g-proj{padding:24px;background:var(--bg2);transition:background 0.2s;position:relative;overflow:hidden}
+.g-proj::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--p);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.g-proj:hover::after{transform:scaleX(1)}
+.g-proj:hover{background:var(--bg3)}
+.g-proj-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.g-proj-dot{width:8px;height:8px;border-radius:50%}
+.g-proj-tag{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px}
+.g-proj-name{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.g-proj-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.g-proj-link{font-family:var(--mono);font-size:11px;color:var(--p);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.g-proj-link:hover{color:var(--p3)}
+
+/* AI CHAT */
+.g-ai{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.g-ai-head{padding:14px 20px;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:10px;background:var(--bg3)}
+.g-ai-av{width:32px;height:32px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+.g-ai-title{font-size:13px;font-weight:600;color:var(--text)}
+.g-ai-status{font-family:var(--mono);font-size:10px;color:var(--p);display:flex;align-items:center;gap:5px}
+.g-ai-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--p);display:inline-block;animation:gpulse 2s infinite}
+.g-ai-msgs{padding:20px;min-height:260px;max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.g-ai-msgs::-webkit-scrollbar{width:4px}
+.g-ai-msgs::-webkit-scrollbar-thumb{background:var(--border)}
+.g-msg{max-width:82%;padding:10px 14px;border-radius:3px;font-size:13px;line-height:1.6;animation:msgIn 0.3s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.g-msg-ai{background:var(--bg3);border:1px solid var(--border2);color:var(--text);align-self:flex-start;border-bottom-left-radius:0}
+.g-msg-user{background:rgba(0,200,83,0.1);border:1px solid rgba(0,200,83,0.2);color:var(--text);align-self:flex-end;border-bottom-right-radius:0}
+.g-typing{display:flex;gap:4px;padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:3px;border-bottom-left-radius:0;align-self:flex-start}
+.g-td{width:6px;height:6px;border-radius:50%;background:var(--p);opacity:0.3;animation:td 1.2s infinite}
+.g-td:nth-child(2){animation-delay:.2s}.g-td:nth-child(3){animation-delay:.4s}
+@keyframes td{0%,60%,100%{opacity:0.2;transform:scale(0.8)}30%{opacity:1;transform:scale(1)}}
+.g-ai-sugs{display:flex;flex-wrap:wrap;gap:6px;padding:0 20px 14px;background:var(--bg2)}
+.g-sug{font-family:var(--mono);font-size:10px;padding:5px 10px;border:1px solid var(--border2);border-radius:2px;color:var(--muted);cursor:pointer;transition:all 0.2s;background:none}
+.g-sug:hover{border-color:var(--border);color:var(--p);background:rgba(0,200,83,0.04)}
+.g-ai-foot{padding:12px 14px;border-top:1px solid var(--border2);display:flex;gap:10px;background:var(--bg3)}
+.g-ai-inp{flex:1;background:var(--bg2);border:1px solid var(--border2);color:var(--text);padding:10px 14px;font-size:13px;border-radius:3px;outline:none;font-family:var(--font)}
+.g-ai-inp:focus{border-color:var(--border)}
+.g-ai-inp::placeholder{color:var(--muted)}
+.g-ai-send{background:var(--p);color:#020d04;border:none;padding:10px 16px;border-radius:3px;cursor:pointer;font-size:14px;transition:all 0.2s;display:flex;align-items:center}
+.g-ai-send:hover{background:var(--p3)}
+
+/* CONTACT */
+.g-contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;border:1px solid var(--border2)}
+.g-contact-item{padding:20px 22px;background:var(--bg2);display:flex;align-items:center;gap:14px;text-decoration:none;transition:background 0.2s}
+.g-contact-item:hover{background:var(--bg3)}
+.g-contact-item i{font-size:20px;color:var(--p)}
+.g-ci-label{font-size:10px;color:var(--muted);font-family:var(--mono);letter-spacing:0.5px}
+.g-ci-val{font-size:13px;color:var(--text)}
+
+/* FOOTER */
+.g-footer{padding:22px 56px;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.g-footer p{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px}
+
+/* ═══ LOGIN ═══ */
+#login-page{display:none;position:fixed;inset:0;z-index:1000;background:var(--bg);align-items:center;justify-content:center}
+#login-page.show{display:flex}
+.login-box{border:1px solid var(--border);padding:48px;min-width:340px;background:var(--bg2);position:relative}
+.login-box::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--p)}
+.login-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-0.5px}
+.login-sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:28px;letter-spacing:0.5px}
+.login-box input{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:12px 16px;font-family:var(--mono);font-size:14px;border-radius:2px;outline:none;margin-bottom:14px}
+.login-box input:focus{border-color:var(--border)}
+.login-err{font-size:12px;color:var(--red);font-family:var(--mono);margin-bottom:12px;display:none}
+.login-err.show{display:block}
+.login-loading{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:12px;display:none}
+.login-loading.show{display:block}
+
+/* ═══ DASHBOARD ═══ */
+#dashboard-page{display:none;position:fixed;inset:0;z-index:999;background:var(--bg);overflow-y:auto}
+#dashboard-page.show{display:block}
+.db-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border2);background:rgba(4,13,6,0.95);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+.db-brand{font-size:14px;font-weight:800;color:#fff}
+.db-brand span{color:var(--p)}
+.db-nav-right{display:flex;align-items:center;gap:16px}
+.db-time{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.btn-logout{font-family:var(--mono);font-size:11px;color:var(--muted);background:none;border:1px solid var(--border2);padding:5px 12px;cursor:pointer;border-radius:2px;transition:all 0.2s}
+.btn-logout:hover{border-color:var(--border);color:var(--text)}
+.db-layout{display:grid;grid-template-columns:200px 1fr;min-height:calc(100vh - 52px)}
+
+/* SIDEBAR */
+.db-sidebar{border-right:1px solid var(--border2);padding:20px 0;background:var(--bg2)}
+.sb-group{margin-bottom:24px}
+.sb-group-label{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding:0 16px;margin-bottom:8px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:9px 16px;font-size:13px;color:var(--muted);cursor:pointer;transition:all 0.15s;border-right:2px solid transparent}
+.sb-item:hover{color:var(--text);background:rgba(255,255,255,0.03)}
+.sb-item.active{color:var(--p);border-right-color:var(--p);background:rgba(0,200,83,0.06)}
+.sb-item i{font-size:15px}
+.sb-badge{margin-left:auto;font-size:10px;padding:1px 7px;border-radius:20px;background:rgba(0,200,83,0.15);color:var(--p);font-family:var(--mono)}
+
+/* DB MAIN */
+.db-main{padding:24px;overflow-y:auto}
+.db-section{display:none}
+.db-section.active{display:block}
+.db-section-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:20px;letter-spacing:-0.5px}
+
+/* STAT CARDS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:var(--bg2);border:1px solid var(--border2);padding:16px 18px;border-radius:2px}
+.stat-card-label{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;letter-spacing:0.5px}
+.stat-card-val{font-size:28px;font-weight:800;color:#fff;line-height:1}
+.stat-card-sub{font-family:var(--mono);font-size:10px;color:var(--success);margin-top:4px;letter-spacing:0.5px}
+
+/* TABLES */
+.db-table{width:100%;border-collapse:collapse;font-size:13px}
+.db-table th{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;padding:8px 14px;border-bottom:1px solid var(--border2);text-align:left;font-weight:400}
+.db-table td{padding:10px 14px;border-bottom:1px solid var(--border2);color:var(--text);vertical-align:middle}
+.db-table tr:last-child td{border-bottom:none}
+.db-table tr:hover td{background:rgba(255,255,255,0.02)}
+.page-pill{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:2px;background:rgba(0,200,83,0.08);color:var(--p);border:1px solid var(--border)}
+.time-cell{color:var(--muted);font-family:var(--mono);font-size:11px}
+
+/* DB CARDS */
+.db-grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.db-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px}
+.db-card{background:var(--bg2);border:1px solid var(--border2);padding:18px;border-radius:2px}
+.db-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.db-card-title{font-size:13px;font-weight:600;color:#fff;display:flex;align-items:center;gap:7px}
+.db-card-title i{font-size:14px;color:var(--p)}
+.db-card-action{font-family:var(--mono);font-size:11px;color:var(--p);cursor:pointer;background:none;border:none;letter-spacing:0.3px}
+.db-card-action:hover{color:var(--p3)}
+
+/* CHART */
+.chart-bars{display:flex;align-items:flex-end;gap:6px;height:90px;padding-top:8px}
+.chart-bar{flex:1;border-radius:2px 2px 0 0;transition:opacity 0.2s;cursor:pointer}
+.chart-bar:hover{opacity:0.8}
+.chart-bar-labels{display:flex;gap:6px;margin-top:6px}
+.chart-bar-label{flex:1;font-family:var(--mono);font-size:9px;color:var(--muted);text-align:center;letter-spacing:0.3px}
+
+/* PROJ ADMIN */
+.proj-admin-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border2)}
+.proj-admin-row:last-child{border-bottom:none}
+.proj-color-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.proj-admin-info{flex:1}
+.proj-admin-name{font-size:13px;font-weight:600;color:#fff}
+.proj-admin-url{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.proj-visible{font-size:10px;padding:2px 7px;border-radius:20px;font-family:var(--mono)}
+.proj-visible.on{background:rgba(0,200,83,0.1);color:var(--success);border:1px solid rgba(0,200,83,0.2)}
+.proj-visible.off{background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.2)}
+.icon-btn{background:none;border:1px solid var(--border2);color:var(--muted);width:28px;height:28px;border-radius:2px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all 0.15s;font-size:13px}
+.icon-btn:hover{border-color:var(--border);color:var(--text)}
+.icon-btn.danger:hover{border-color:rgba(239,68,68,0.4);color:var(--red)}
+
+/* FORMS */
+.db-input{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:10px 12px;font-family:var(--font);font-size:13px;border-radius:2px;outline:none;margin-bottom:10px}
+.db-input:focus{border-color:var(--border)}
+.db-input::placeholder{color:var(--muted)}
+.db-textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);padding:10px 12px;font-family:var(--font);font-size:13px;border-radius:2px;outline:none;resize:vertical;min-height:80px}
+.db-textarea:focus{border-color:var(--border)}
+.add-form{background:var(--bg3);border:1px solid var(--border);padding:16px;border-radius:2px;margin-bottom:16px;display:none}
+.add-form.show{display:block}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* TODO */
+.todo-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border2)}
+.todo-item:last-child{border-bottom:none}
+.todo-check{width:16px;height:16px;accent-color:var(--p);cursor:pointer;flex-shrink:0}
+.todo-text{font-size:13px;color:var(--text);flex:1}
+.todo-text.done{text-decoration:line-through;color:var(--muted)}
+
+/* NOTES */
+.note-item{border-left:2px solid var(--p);padding:10px 14px;background:var(--bg3);margin-bottom:10px;font-size:13px;color:var(--muted);line-height:1.6;display:flex;justify-content:space-between;gap:10px}
+.note-text{flex:1}
+
+/* LINKS */
+.link-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border2)}
+.link-item:last-child{border-bottom:none}
+.link-item i{font-size:16px;color:var(--p)}
+.link-title{font-size:13px;color:var(--text);flex:1}
+.link-url{font-family:var(--mono);font-size:11px;color:var(--muted);flex:2}
+.link-lock{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:20px;background:rgba(0,200,83,0.08);color:var(--p);border:1px solid var(--border)}
+
+/* SERVER */
+.server-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border2)}
+.server-item:last-child{border-bottom:none}
+.server-name{font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px}
+.server-status{font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:20px}
+.s-online{background:rgba(0,200,83,0.1);color:var(--success);border:1px solid rgba(0,200,83,0.2)}
+.s-warn{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.2)}
+.status-dot{width:7px;height:7px;border-radius:50%}
+
+/* LOADING */
+.loading{display:flex;align-items:center;gap:8px;color:var(--muted);font-family:var(--mono);font-size:12px;padding:20px 0}
+.loading-dot{width:6px;height:6px;border-radius:50%;background:var(--p);animation:ld 1.2s infinite}
+.loading-dot:nth-child(2){animation-delay:0.2s}.loading-dot:nth-child(3){animation-delay:0.4s}
+@keyframes ld{0%,60%,100%{opacity:0.2}30%{opacity:1}}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:10px 20px;border-radius:2px;font-family:var(--mono);font-size:12px;z-index:9999;opacity:0;transition:all 0.3s;pointer-events:none;letter-spacing:0.3px}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success{border-color:rgba(0,200,83,0.4);color:var(--success)}
+.toast.error{border-color:rgba(239,68,68,0.4);color:var(--red)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .g-nav{padding:14px 20px}.g-clock-nav{display:none}
+  .g-hero{grid-template-columns:1fr;padding:40px 20px;gap:32px}
+  .g-photo-frame img{height:280px}
+  .g-sec{padding:36px 20px}
+  .g-footer{padding:16px 20px;flex-direction:column;gap:6px;text-align:center}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .db-grid2,.db-grid3{grid-template-columns:1fr}
+  .db-layout{grid-template-columns:1fr}
+  .db-sidebar{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PUBLIC PAGE ═══════════ -->
+<div id="public-page">
+
+  <nav class="g-nav">
+    <div class="g-logo-wrap">
+      <img class="g-logo-img" src="https://ik.imagekit.io/imgayoub/LOGO/ayoub.pw%20logo%20many%20size/no%20background/android-chrome-192x192.png?updatedAt=1778461922147" alt="Ayoub Logo">
+      <div class="g-logo-text">ayoub<span>.pw</span></div>
+    </div>
+    <ul class="g-nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#ask">Ask AI</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="g-clock-nav" id="nav-clock-pub"></div>
+  </nav>
+
+  <section class="g-hero" id="about">
+    <div>
+      <div class="g-badge"><span class="g-badge-dot"></span>AVAILABLE · VIENNA, AUSTRIA</div>
+      <h1 class="g-h1">Ayoub K.<em>Consultant & Developer</em></h1>
+      <div class="g-role">TRAVEL ADVISOR · HOTEL EXPERT · WEB DEVELOPER</div>
+      <p class="g-desc">Passionate about creating seamless travel experiences and building powerful digital products. Expert in luxury hospitality consulting and full-stack web development — from idea to live deployment.</p>
+      <div class="g-btns">
+        <a href="mailto:contact@ayoub.pw" class="g-btn g-btn-p"><i class="ti ti-mail"></i> contact@ayoub.pw</a>
+        <a href="https://www.linkedin.com/in/ayoub-k" target="_blank" class="g-btn g-btn-g"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/algoushah" target="_blank" class="g-btn g-btn-g"><i class="ti ti-brand-github"></i> GitHub</a>
+      </div>
+    </div>
+    <div>
+      <div class="g-photo-frame">
+        <div class="g-scan"></div>
+        <img src="https://ik.imagekit.io/imgayoub/ayoub.jpg?updatedAt=1772334454922" alt="Ayoub K.">
+        <div class="g-corner tl"></div><div class="g-corner tr"></div>
+        <div class="g-corner bl"></div><div class="g-corner br"></div>
+        <div class="g-photo-label">
+          <div class="g-photo-name">Ayoub K.</div>
+          <div class="g-photo-sub">VIENNA · AUSTRIA · 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-sec" id="skills">
+    <div class="g-sec-label">Technical skills</div>
+    <div class="g-skills">
+      <div class="g-skill"><i class="ti ti-brand-html5"></i>HTML / CSS</div>
+      <div class="g-skill"><i class="ti ti-brand-javascript"></i>JavaScript</div>
+      <div class="g-skill"><i class="ti ti-brand-nextjs"></i>Next.js</div>
+      <div class="g-skill"><i class="ti ti-database"></i>Supabase</div>
+      <div class="g-skill"><i class="ti ti-server"></i>VPS / Linux</div>
+      <div class="g-skill"><i class="ti ti-brand-docker"></i>Docker / Coolify</div>
+      <div class="g-skill"><i class="ti ti-cloud"></i>Cloudflare</div>
+      <div class="g-skill"><i class="ti ti-webhook"></i>n8n Automation</div>
+      <div class="g-skill"><i class="ti ti-brand-python"></i>Python / Flask</div>
+      <div class="g-skill"><i class="ti ti-api"></i>REST APIs</div>
+      <div class="g-skill"><i class="ti ti-plane"></i>Travel Consulting</div>
+      <div class="g-skill"><i class="ti ti-building"></i>Hotel Expertise</div>
+    </div>
+  </section>
+
+  <section class="g-sec" id="projects">
+    <div class="g-sec-label">Projects</div>
+    <div class="g-proj-grid" id="public-projects">
+      <div style="padding:24px;color:var(--muted);font-family:var(--mono);font-size:12px;grid-column:1/-1">
+        <span class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span>loading projects...</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-sec" id="ask">
+    <div class="g-sec-label">Ask about me — AI</div>
+    <div class="g-ai">
+      <div class="g-ai-head">
+        <img class="g-ai-av" src="https://ik.imagekit.io/imgayoub/LOGO/ayoub.pw%20logo%20many%20size/no%20background/android-chrome-192x192.png?updatedAt=1778461922147" alt="AI">
+        <div>
+          <div class="g-ai-title">Ayoub's AI Assistant</div>
+          <div class="g-ai-status">online · ask me anything about Ayoub</div>
+        </div>
+      </div>
+      <div class="g-ai-msgs" id="ai-messages">
+        <div class="g-msg g-msg-ai">👋 Hi! I'm Ayoub's AI assistant. I can tell you all about his work as a <strong>Travel Advisor</strong>, <strong>Hotel Expert</strong>, and <strong>Web Developer</strong>. What would you like to know?</div>
+      </div>
+      <div class="g-ai-sugs" id="ai-suggestions">
+        <button class="g-sug" onclick="askSug(this)">What does Ayoub do?</button>
+        <button class="g-sug" onclick="askSug(this)">Travel consulting services?</button>
+        <button class="g-sug" onclick="askSug(this)">Hotel expertise?</button>
+        <button class="g-sug" onclick="askSug(this)">Web development skills?</button>
+        <button class="g-sug" onclick="askSug(this)">How to contact Ayoub?</button>
+      </div>
+      <div class="g-ai-foot">
+        <input class="g-ai-inp" id="ai-input" placeholder="Ask anything about Ayoub..." onkeydown="if(event.key==='Enter')sendAI()">
+        <button class="g-ai-send" onclick="sendAI()"><i class="ti ti-send"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-sec" id="contact">
+    <div class="g-sec-label">Contact</div>
+    <div class="g-contact-grid">
+      <a href="mailto:contact@ayoub.pw" class="g-contact-item"><i class="ti ti-mail"></i><div><div class="g-ci-label">Email</div><div class="g-ci-val">contact@ayoub.pw</div></div></a>
+      <a href="https://www.linkedin.com/in/ayoub-k" target="_blank" class="g-contact-item"><i class="ti ti-brand-linkedin"></i><div><div class="g-ci-label">LinkedIn</div><div class="g-ci-val">ayoub-k</div></div></a>
+      <a href="https://github.com/algoushah" target="_blank" class="g-contact-item"><i class="ti ti-brand-github"></i><div><div class="g-ci-label">GitHub</div><div class="g-ci-val">algoushah</div></div></a>
+      <a href="https://www.instagram.com/algoushah/" target="_blank" class="g-contact-item"><i class="ti ti-brand-instagram"></i><div><div class="g-ci-label">Instagram</div><div class="g-ci-val">algoushah</div></div></a>
+      <a href="https://t.me/algoushah" target="_blank" class="g-contact-item"><i class="ti ti-brand-telegram"></i><div><div class="g-ci-label">Telegram</div><div class="g-ci-val">@algoushah</div></div></a>
+      <div class="g-contact-item"><i class="ti ti-map-pin"></i><div><div class="g-ci-label">Location</div><div class="g-ci-val">Vienna 1020, Austria</div></div></div>
+    </div>
+  </section>
+
+  <footer class="g-footer">
+    <p>ayoub.pw &mdash; 2026 &mdash; Vienna, Austria</p>
+    <p>Made with ❤️ and ☕</p>
+  </footer>
+</div>
+
+<!-- ═══════════ LOGIN ═══════════ -->
+<div id="login-page">
+  <div class="login-box">
+    <div class="login-title">Admin Access</div>
+    <div class="login-sub">ayoub.pw / dashboard</div>
+    <input type="password" id="login-input" placeholder="Password..." onkeydown="if(event.key==='Enter')doLogin()">
+    <div class="login-err" id="login-err">Wrong password. Try again.</div>
+    <div class="login-loading" id="login-loading">Verifying...</div>
+    <button class="g-btn g-btn-p" style="width:100%;justify-content:center" onclick="doLogin()">
+      <i class="ti ti-lock-open"></i> Enter
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════ DASHBOARD ═══════════ -->
+<div id="dashboard-page">
+  <div class="db-nav">
+    <div class="db-brand">ayoub<span>.pw</span> <span style="color:var(--muted);font-weight:400;font-size:12px">/ dashboard</span></div>
+    <div class="db-nav-right">
+      <div class="db-time" id="db-clock"></div>
+      <button class="btn-logout" onclick="logout()"><i class="ti ti-logout" style="font-size:12px"></i> Logout</button>
+    </div>
+  </div>
+  <div class="db-layout">
+    <div class="db-sidebar">
+      <div class="sb-group">
+        <div class="sb-group-label">Overview</div>
+        <div class="sb-item active" onclick="showSection('home')"><i class="ti ti-layout-dashboard"></i>Home</div>
+        <div class="sb-item" onclick="showSection('visitors')"><i class="ti ti-eye"></i>Visitors <span class="sb-badge" id="visitors-badge">—</span></div>
+        <div class="sb-item" onclick="showSection('analytics')"><i class="ti ti-chart-bar"></i>Analytics</div>
+      </div>
+      <div class="sb-group">
+        <div class="sb-group-label">Content</div>
+        <div class="sb-item" onclick="showSection('projects')"><i class="ti ti-apps"></i>Projects</div>
+        <div class="sb-item" onclick="showSection('links')"><i class="ti ti-lock"></i>Private Links</div>
+        <div class="sb-item" onclick="showSection('todos')"><i class="ti ti-checkbox"></i>TODO</div>
+        <div class="sb-item" onclick="showSection('notes')"><i class="ti ti-notes"></i>Notes</div>
+      </div>
+      <div class="sb-group">
+        <div class="sb-group-label">System</div>
+        <div class="sb-item" onclick="showSection('telegram')"><i class="ti ti-brand-telegram"></i>Telegram</div>
+        <div class="sb-item" onclick="showSection('server')"><i class="ti ti-server"></i>Server</div>
+      </div>
+    </div>
+    <div class="db-main">
+
+      <!-- HOME -->
+      <div class="db-section active" id="sec-home">
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-card-label" style="color:#a78bfa"><i class="ti ti-eye" style="color:#a78bfa"></i>Visitors today</div>
+            <div class="stat-card-val" id="stat-today">—</div>
+            <div class="stat-card-sub" id="stat-today-sub">loading...</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label" style="color:var(--success)"><i class="ti ti-world" style="color:var(--success)"></i>Countries</div>
+            <div class="stat-card-val" id="stat-countries">—</div>
+            <div class="stat-card-sub" id="stat-countries-sub">loading...</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label" style="color:var(--amber)"><i class="ti ti-apps" style="color:var(--amber)"></i>Projects</div>
+            <div class="stat-card-val" id="stat-projects">—</div>
+            <div class="stat-card-sub">all live</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label" style="color:var(--blue)"><i class="ti ti-server" style="color:var(--blue)"></i>VPS</div>
+            <div class="stat-card-val" style="font-size:16px;color:var(--success);padding-top:6px"><i class="ti ti-check"></i> online</div>
+            <div class="stat-card-sub">161.97.104.114</div>
+          </div>
+        </div>
+        <div class="db-grid2">
+          <div class="db-card">
+            <div class="db-card-head"><div class="db-card-title"><i class="ti ti-eye"></i>Recent Visitors</div><button class="db-card-action" onclick="showSection('visitors')">View all →</button></div>
+            <div id="home-visitors-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div>
+          </div>
+          <div class="db-card">
+            <div class="db-card-head"><div class="db-card-title"><i class="ti ti-chart-bar"></i>Week Overview</div></div>
+            <div class="chart-bars" id="week-chart"></div>
+            <div class="chart-bar-labels" id="week-labels"></div>
+          </div>
+        </div>
+        <div class="db-grid3">
+          <div class="db-card">
+            <div class="db-card-head"><div class="db-card-title"><i class="ti ti-checkbox"></i>TODO</div><button class="db-card-action" onclick="showSection('todos')">Manage →</button></div>
+            <div id="home-todos-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div>
+          </div>
+          <div class="db-card">
+            <div class="db-card-head"><div class="db-card-title"><i class="ti ti-brand-telegram"></i>Telegram Feed</div></div>
+            <div style="font-family:var(--mono);font-size:11px;color:var(--muted);padding:8px 0">Notifications sent automatically on each visit.</div>
+          </div>
+          <div class="db-card">
+            <div class="db-card-head"><div class="db-card-title"><i class="ti ti-notes"></i>Notes</div><button class="db-card-action" onclick="showSection('notes')">Manage →</button></div>
+            <div id="home-notes-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISITORS -->
+      <div class="db-section" id="sec-visitors">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="db-section-title">All Visitors</div>
+          <button class="icon-btn danger" onclick="clearVisitors()"><i class="ti ti-trash"></i></button>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="db-table">
+            <thead><tr><th>Flag</th><th>Country</th><th>City</th><th>IP</th><th>Page</th><th>Time</th></tr></thead>
+            <tbody id="visitors-tbody"><tr><td colspan="6"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ANALYTICS -->
+      <div class="db-section" id="sec-analytics">
+        <div class="db-section-title">Analytics</div>
+        <div class="db-grid2">
+          <div class="db-card"><div class="db-card-head"><div class="db-card-title"><i class="ti ti-world"></i>Top Countries</div></div><div id="analytics-countries"></div></div>
+          <div class="db-card"><div class="db-card-head"><div class="db-card-title"><i class="ti ti-file"></i>Top Pages</div></div><div id="analytics-pages"></div></div>
+        </div>
+        <div class="db-card">
+          <div class="db-card-head"><div class="db-card-title"><i class="ti ti-chart-bar"></i>Last 14 Days</div></div>
+          <div class="chart-bars" id="analytics-chart" style="height:120px"></div>
+          <div class="chart-bar-labels" id="analytics-labels"></div>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="db-section" id="sec-projects">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="db-section-title">Projects</div>
+          <button class="g-btn g-btn-p" onclick="toggleAddForm('proj')" style="font-size:12px;padding:8px 16px"><i class="ti ti-plus"></i> Add</button>
+        </div>
+        <div class="add-form" id="proj-add-form">
+          <div class="form-row"><input class="db-input" id="pf-name" placeholder="Project name"><input class="db-input" id="pf-tag" placeholder="Tag"></div>
+          <input class="db-input" id="pf-url" placeholder="URL (https://...)">
+          <input class="db-input" id="pf-desc" placeholder="Short description">
+          <div class="form-row"><input class="db-input" id="pf-color" placeholder="Color" value="#00c853"><div></div></div>
+          <div style="display:flex;gap:10px">
+            <button class="g-btn g-btn-p" onclick="addProject()" style="font-size:12px;padding:8px 16px"><i class="ti ti-check"></i> Save</button>
+            <button class="g-btn g-btn-g" onclick="toggleAddForm('proj')" style="font-size:12px;padding:8px 16px">Cancel</button>
+          </div>
+        </div>
+        <div class="db-card"><div id="projects-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div></div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="db-section" id="sec-links">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="db-section-title">Private Links</div>
+          <button class="g-btn g-btn-p" onclick="toggleAddForm('link')" style="font-size:12px;padding:8px 16px"><i class="ti ti-plus"></i> Add</button>
+        </div>
+        <div class="add-form" id="link-add-form">
+          <div class="form-row"><input class="db-input" id="lf-title" placeholder="Title"><input class="db-input" id="lf-icon" placeholder="Icon (ti-server)"></div>
+          <input class="db-input" id="lf-url" placeholder="URL (https://...)">
+          <div style="display:flex;gap:10px">
+            <button class="g-btn g-btn-p" onclick="addLink()" style="font-size:12px;padding:8px 16px"><i class="ti ti-check"></i> Save</button>
+            <button class="g-btn g-btn-g" onclick="toggleAddForm('link')" style="font-size:12px;padding:8px 16px">Cancel</button>
+          </div>
+        </div>
+        <div class="db-card"><div id="links-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div></div>
+      </div>
+
+      <!-- TODOS -->
+      <div class="db-section" id="sec-todos">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="db-section-title">TODO</div>
+          <button class="g-btn g-btn-p" onclick="toggleAddForm('todo')" style="font-size:12px;padding:8px 16px"><i class="ti ti-plus"></i> Add</button>
+        </div>
+        <div class="add-form" id="todo-add-form">
+          <input class="db-input" id="tf-text" placeholder="Task..." onkeydown="if(event.key==='Enter')addTodo()">
+          <div style="display:flex;gap:10px">
+            <button class="g-btn g-btn-p" onclick="addTodo()" style="font-size:12px;padding:8px 16px"><i class="ti ti-check"></i> Save</button>
+            <button class="g-btn g-btn-g" onclick="toggleAddForm('todo')" style="font-size:12px;padding:8px 16px">Cancel</button>
+          </div>
+        </div>
+        <div class="db-card"><div id="todos-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div></div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="db-section" id="sec-notes">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div class="db-section-title">Notes</div>
+          <button class="g-btn g-btn-p" onclick="toggleAddForm('note')" style="font-size:12px;padding:8px 16px"><i class="ti ti-plus"></i> Add</button>
+        </div>
+        <div class="add-form" id="note-add-form">
+          <textarea class="db-textarea" id="nf-content" placeholder="Note content..."></textarea>
+          <div style="display:flex;gap:10px;margin-top:6px">
+            <button class="g-btn g-btn-p" onclick="addNote()" style="font-size:12px;padding:8px 16px"><i class="ti ti-check"></i> Save</button>
+            <button class="g-btn g-btn-g" onclick="toggleAddForm('note')" style="font-size:12px;padding:8px 16px">Cancel</button>
+          </div>
+        </div>
+        <div id="notes-list"><div class="loading"><span class="loading-dot"></span><span class="loading-dot"></span><span class="loading-dot"></span></div></div>
+      </div>
+
+      <!-- TELEGRAM -->
+      <div class="db-section" id="sec-telegram">
+        <div class="db-section-title">Telegram Notifications</div>
+        <div class="db-card" style="margin-bottom:16px">
+          <div class="db-card-title" style="margin-bottom:12px"><i class="ti ti-settings"></i> Settings</div>
+          <div style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px">Notifications: <span style="color:var(--success)">Active</span></div>
+          <button class="g-btn g-btn-g" onclick="sendTestTg()" style="font-size:12px;padding:8px 16px"><i class="ti ti-send"></i> Send test message</button>
+        </div>
+      </div>
+
+      <!-- SERVER -->
+      <div class="db-section" id="sec-server">
+        <div class="db-section-title">Server Status</div>
+        <div class="db-grid2">
+          <div class="db-card">
+            <div class="db-card-title" style="margin-bottom:14px"><i class="ti ti-server"></i> Services</div>
+            <div class="server-item"><span class="server-name"><span class="status-dot" style="background:var(--success)"></span>VPS Main (161.97.104.114)</span><span class="server-status s-online">online</span></div>
+            <div class="server-item"><span class="server-name"><span class="status-dot" style="background:var(--success)"></span>Cloudflare</span><span class="server-status s-online">online</span></div>
+            <div class="server-item"><span class="server-name"><span class="status-dot" style="background:var(--success)"></span>n8n (n8n.ayoub.pw)</span><span class="server-status s-online">online</span></div>
+            <div class="server-item"><span class="server-name"><span class="status-dot" style="background:var(--success)"></span>Supabase DB</span><span class="server-status s-online">online</span></div>
+            <div class="server-item"><span class="server-name"><span class="status-dot" style="background:var(--amber)"></span>ytdlp-api.service</span><span class="server-status s-warn">check cookies</span></div>
+          </div>
+          <div class="db-card">
+            <div class="db-card-title" style="margin-bottom:14px"><i class="ti ti-info-circle"></i> Info</div>
+            <div style="font-family:var(--mono);font-size:12px;color:var(--muted);line-height:2">
+              <div>OS: <span style="color:var(--text)">Ubuntu 24</span></div>
+              <div>Docker: <span style="color:var(--text)">Coolify</span></div>
+              <div>DNS: <span style="color:var(--text)">Cloudflare</span></div>
+              <div>DB: <span style="color:var(--text)">Supabase EU-West</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══ CONFIG ═══
+const SB = 'https://untykvvahfwvdjbzbpud.supabase.co';
+const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVudHlrdnZhaGZ3dmRqYnpicHVkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY1NDQ2OTUsImV4cCI6MjA5MjEyMDY5NX0.Nf_-DMjGgv2liMP26lKYaVHFAShbLDuwVniuj8dJ-Qs';
+
+// ═══ HELPERS ═══
+const esc = s => {if(!s)return '';const d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML;};
+const toast = (msg,type='') => {const t=document.getElementById('toast');t.textContent=msg;t.className=`toast${type?' '+type:''} show`;setTimeout(()=>t.className='toast',2500)};
+const timeAgo = ts => {const d=Math.floor((Date.now()-new Date(ts))/1000);if(d<60)return d+'s ago';if(d<3600)return Math.floor(d/60)+'m ago';if(d<86400)return Math.floor(d/3600)+'h ago';return Math.floor(d/86400)+'d ago'};
+const flag = c => ({'Austria':'🇦🇹','Germany':'🇩🇪','Morocco':'🇲🇦','USA':'🇺🇸','France':'🇫🇷','United Kingdom':'🇬🇧','Netherlands':'🇳🇱','Spain':'🇪🇸','Italy':'🇮🇹','Switzerland':'🇨🇭','Turkey':'🇹🇷','Saudi Arabia':'🇸🇦','UAE':'🇦🇪','Egypt':'🇪🇬'}[c]||'🌍');
+
+// ═══ API CALLS ═══
+// Public — read only (projects for public page)
+const sbPub = async (table, params='') => {
+  const r = await fetch(`${SB}/rest/v1/${table}${params}`, {
+    headers:{'apikey':KEY,'Authorization':`Bearer ${KEY}`}
+  });
+  return r.ok ? r.json().catch(()=>null) : null;
+};
+
+// Admin — all operations via secure Edge Function
+const sbAdmin = async (action, table, params='', body=null) => {
+  const pass = sessionStorage.getItem('ayoub_admin');
+  if(!pass) return null;
+  const r = await fetch(`${SB}/functions/v1/admin-proxy`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({password:pass, action, table, params, body})
+  });
+  if(!r.ok) return null;
+  if(action==='DELETE') return true;
+  return r.json().catch(()=>null);
+};
+
+// Telegram via Edge Function
+const tg = async msg => {
+  try {
+    await fetch(`${SB}/functions/v1/send-telegram`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':`Bearer ${KEY}`},
+      body:JSON.stringify({message:msg})
+    });
+  } catch(e){}
+};
+
+// ═══ CLOCKS ═══
+const viennaTime = () => new Date().toLocaleTimeString('en-AT',{timeZone:'Europe/Vienna',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+setInterval(()=>{
+  const a=document.getElementById('nav-clock-pub');if(a)a.textContent=viennaTime();
+  const b=document.getElementById('db-clock');if(b)b.textContent=viennaTime();
+},1000);
+
+// ═══ VISITOR TRACKING ═══
+const trackVisitor = async () => {
+  try {
+    const geo = await fetch('https://ipapi.co/json/').then(r=>r.json()).catch(()=>({}));
+    await fetch(`${SB}/functions/v1/track-visitor`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':`Bearer ${KEY}`},
+      body:JSON.stringify({
+        ip:geo.ip||'unknown', country:geo.country_name||'Unknown',
+        city:geo.city||'Unknown', page:location.pathname||'/',
+        user_agent:navigator.userAgent, referrer:document.referrer||'direct'
+      })
+    });
+  } catch(e){}
+};
+
+// ═══ LOGIN — uses admin-proxy to verify password server-side ═══
+const doLogin = async () => {
+  const pass = document.getElementById('login-input').value;
+  const errEl = document.getElementById('login-err');
+  const loadEl = document.getElementById('login-loading');
+  errEl.classList.remove('show');
+  loadEl.classList.add('show');
+  try {
+    const r = await fetch(`${SB}/functions/v1/admin-proxy`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({password:pass, action:'verify'})
+    });
+    loadEl.classList.remove('show');
+    if(r.ok){
+      sessionStorage.setItem('ayoub_admin', pass);
+      document.getElementById('login-page').classList.remove('show');
+      document.getElementById('dashboard-page').classList.add('show');
+      document.getElementById('public-page').style.display='none';
+      loadDashboard();
+    } else {
+      errEl.classList.add('show');
+      document.getElementById('login-input').value='';
+    }
+  } catch(e){
+    loadEl.classList.remove('show');
+    errEl.textContent='Connection error. Try again.';
+    errEl.classList.add('show');
+  }
+};
+
+const logout = () => {
+  sessionStorage.removeItem('ayoub_admin');
+  document.getElementById('dashboard-page').classList.remove('show');
+  document.getElementById('login-page').classList.remove('show');
+  document.getElementById('public-page').style.display='block';
+  location.hash='';
+};
+
+// ═══ ROUTING ═══
+const checkRoute = () => {
+  if(location.hash==='#admin'){
+    if(sessionStorage.getItem('ayoub_admin')){
+      document.getElementById('public-page').style.display='none';
+      document.getElementById('dashboard-page').classList.add('show');
+      loadDashboard();
+    } else {
+      document.getElementById('public-page').style.display='none';
+      document.getElementById('login-page').classList.add('show');
+    }
+  }
+};
+window.addEventListener('hashchange',checkRoute);
+
+// ═══ SIDEBAR ═══
+const showSection = name => {
+  document.querySelectorAll('.db-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(s=>s.classList.remove('active'));
+  document.getElementById(`sec-${name}`).classList.add('active');
+  document.querySelectorAll('.sb-item').forEach(el=>{if(el.getAttribute('onclick')?.includes(`'${name}'`))el.classList.add('active')});
+};
+
+document.querySelectorAll('.sb-item').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const fn=el.getAttribute('onclick');
+    if(fn?.includes('visitors'))loadStats();
+    if(fn?.includes('analytics'))loadStats();
+    if(fn?.includes('projects'))loadProjects();
+    if(fn?.includes('links'))loadLinks();
+    if(fn?.includes('todos'))loadTodos();
+    if(fn?.includes('notes'))loadNotes();
+  });
+});
+
+// ═══ DASHBOARD LOAD ═══
+const loadDashboard = () => {
+  loadStats(); loadHomeVisitors(); loadWeekChart();
+  loadHomeTodos(); loadHomeNotes(); loadPublicProjects();
+};
+
+// ═══ STATS ═══
+const loadStats = async () => {
+  const today=new Date();today.setHours(0,0,0,0);
+  const [allV,projs]=await Promise.all([
+    sbAdmin('GET','visitors','?select=country,city,ip,page,created_at&order=created_at.desc'),
+    sbAdmin('GET','projects','?select=id')
+  ]);
+  if(allV){
+    const todayV=allV.filter(v=>new Date(v.created_at)>=today);
+    document.getElementById('stat-today').textContent=todayV.length;
+    document.getElementById('visitors-badge').textContent=todayV.length;
+    const countries=[...new Set(allV.map(v=>v.country))];
+    document.getElementById('stat-countries').textContent=countries.length;
+    document.getElementById('stat-countries-sub').textContent=countries.slice(0,3).join(' · ');
+    const prev=allV.filter(v=>{const d=new Date(v.created_at),y=new Date(today);y.setDate(y.getDate()-1);return d>=y&&d<today}).length;
+    const diff=todayV.length-prev;
+    document.getElementById('stat-today-sub').textContent=(diff>=0?'+':'')+diff+' from yesterday';
+    loadVisitorsTable(allV); loadAnalytics(allV);
+  }
+  if(projs)document.getElementById('stat-projects').textContent=projs.length;
+};
+
+// ═══ VISITORS TABLE ═══
+const loadVisitorsTable = data => {
+  const tbody=document.getElementById('visitors-tbody');
+  if(!data||!data.length){tbody.innerHTML='<tr><td colspan="6" style="color:var(--muted);font-family:var(--mono);font-size:12px;padding:20px">No visitors yet.</td></tr>';return}
+  tbody.innerHTML=data.slice(0,50).map(v=>`<tr>
+    <td style="font-size:18px">${flag(v.country)}</td>
+    <td>${esc(v.country)||'—'}</td>
+    <td style="color:var(--muted)">${esc(v.city)||'—'}</td>
+    <td style="font-family:var(--mono);font-size:11px;color:var(--muted)">${esc(v.ip)||'—'}</td>
+    <td><span class="page-pill">${esc(v.page)||'/'}</span></td>
+    <td class="time-cell">${timeAgo(v.created_at)}</td>
+  </tr>`).join('');
+};
+
+// ═══ HOME VISITORS ═══
+const loadHomeVisitors = async () => {
+  const data=await sbAdmin('GET','visitors','?select=country,city,page,created_at&order=created_at.desc&limit=5');
+  const el=document.getElementById('home-visitors-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-size:12px;font-family:var(--mono)">No visitors yet.</div>';return}
+  el.innerHTML=data.map(v=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px">
+    <span>${flag(v.country)} <span style="color:var(--text)">${esc(v.country)}</span></span>
+    <span class="page-pill" style="font-size:10px">${esc(v.page)||'/'}</span>
+    <span style="color:var(--muted);font-family:var(--mono);font-size:10px">${timeAgo(v.created_at)}</span>
+  </div>`).join('');
+};
+
+// ═══ WEEK CHART ═══
+const loadWeekChart = async () => {
+  const data=await sbAdmin('GET','visitors','?select=created_at&order=created_at.desc&limit=500');
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const counts=Array(7).fill(0);
+  const today=new Date();
+  if(data)data.forEach(v=>{const diff=Math.floor((today-new Date(v.created_at))/86400000);if(diff<7)counts[6-diff]++});
+  const max=Math.max(...counts,1);
+  const labels=[];
+  document.getElementById('week-chart').innerHTML=counts.map((c,i)=>{
+    const isToday=i===6;
+    labels.push(isToday?'Today':days[(new Date().getDay()-6+i+7)%7]);
+    return `<div class="chart-bar" style="height:${Math.max(Math.round(c/max*100),4)}%;background:${isToday?'var(--p)':'rgba(0,200,83,0.25)'}"></div>`;
+  }).join('');
+  document.getElementById('week-labels').innerHTML=labels.map(l=>`<div class="chart-bar-label">${l}</div>`).join('');
+};
+
+// ═══ ANALYTICS ═══
+const loadAnalytics = data => {
+  const cc={},pc={};
+  if(data)data.forEach(v=>{if(v.country)cc[v.country]=(cc[v.country]||0)+1;if(v.page)pc[v.page]=(pc[v.page]||0)+1});
+  const topC=Object.entries(cc).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const topP=Object.entries(pc).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxC=topC[0]?.[1]||1,maxP=topP[0]?.[1]||1;
+  document.getElementById('analytics-countries').innerHTML=topC.map(([c,n])=>`<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2)">
+    <span style="font-size:14px">${flag(c)}</span><span style="font-size:12px;flex:1">${c}</span>
+    <div style="width:80px;background:var(--bg3);border-radius:2px;height:6px"><div style="width:${Math.round(n/maxC*100)}%;background:var(--p);height:100%;border-radius:2px"></div></div>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--muted);min-width:20px;text-align:right">${n}</span>
+  </div>`).join('')||'<div style="color:var(--muted);font-size:12px;font-family:var(--mono)">No data yet.</div>';
+  document.getElementById('analytics-pages').innerHTML=topP.map(([p,n])=>`<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2)">
+    <span class="page-pill">${p}</span>
+    <div style="width:80px;background:var(--bg3);border-radius:2px;height:6px;flex-shrink:0"><div style="width:${Math.round(n/maxP*100)}%;background:var(--p);height:100%;border-radius:2px"></div></div>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--muted);min-width:20px;text-align:right">${n}</span>
+  </div>`).join('')||'<div style="color:var(--muted);font-size:12px;font-family:var(--mono)">No data yet.</div>';
+  if(data){
+    const c14=Array(14).fill(0);const now=new Date();
+    data.forEach(v=>{const diff=Math.floor((now-new Date(v.created_at))/86400000);if(diff<14)c14[13-diff]++});
+    const m14=Math.max(...c14,1);
+    document.getElementById('analytics-chart').innerHTML=c14.map((c,i)=>`<div class="chart-bar" style="height:${Math.max(Math.round(c/m14*100),4)}%;background:${i===13?'var(--p)':'rgba(0,200,83,0.3)'}"></div>`).join('');
+    document.getElementById('analytics-labels').innerHTML=c14.map((_,i)=>{const d=new Date(now);d.setDate(d.getDate()-(13-i));return `<div class="chart-bar-label">${i===13?'Today':d.getDate()}</div>`}).join('');
+  }
+};
+
+// ═══ PROJECTS ═══
+const loadProjects = async () => {
+  const data=await sbAdmin('GET','projects','?order=sort_order.asc');
+  const el=document.getElementById('projects-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-family:var(--mono);font-size:12px">No projects yet.</div>';return}
+  el.innerHTML=data.map(p=>`<div class="proj-admin-row">
+    <div class="proj-color-dot" style="background:${esc(p.color)}"></div>
+    <div class="proj-admin-info"><div class="proj-admin-name">${esc(p.name)}</div><div class="proj-admin-url">${esc(p.url)||''}</div></div>
+    <span class="proj-visible ${p.visible?'on':'off'}">${p.visible?'live':'hidden'}</span>
+    <button class="icon-btn" onclick="toggleProject(${p.id},${!p.visible})"><i class="ti ti-eye${p.visible?'':'-off'}"></i></button>
+    <button class="icon-btn danger" onclick="deleteProject(${p.id})"><i class="ti ti-trash"></i></button>
+  </div>`).join('');
+};
+
+const loadPublicProjects = async () => {
+  const data=await sbPub('projects','?visible=eq.true&order=sort_order.asc');
+  const el=document.getElementById('public-projects');
+  if(!data||!data.length){el.innerHTML='<div style="padding:24px;color:var(--muted);font-family:var(--mono);font-size:12px">No projects yet.</div>';return}
+  el.innerHTML=data.map(p=>`<div class="g-proj">
+    <div class="g-proj-top"><div class="g-proj-dot" style="background:${esc(p.color)}"></div><span class="g-proj-tag">${esc(p.tag)||''}</span></div>
+    <div class="g-proj-name">${esc(p.name)}</div>
+    <div class="g-proj-desc">${esc(p.description)||''}</div>
+    ${p.url?`<a href="${esc(p.url)}" target="_blank" class="g-proj-link"><i class="ti ti-external-link"></i>${esc(p.url.replace('https://',''))}</a>`:''}
+  </div>`).join('');
+};
+
+const toggleProject = async (id,visible) => {await sbAdmin('PATCH','projects',`?id=eq.${id}`,{visible});loadProjects();loadPublicProjects();toast(visible?'Project is now live':'Project hidden')};
+const deleteProject = async id => {if(!confirm('Delete this project?'))return;await sbAdmin('DELETE','projects',`?id=eq.${id}`);loadProjects();loadPublicProjects();toast('Deleted','error')};
+const addProject = async () => {
+  const name=document.getElementById('pf-name').value.trim();
+  if(!name)return toast('Name required','error');
+  await sbAdmin('POST','projects','',{name,url:document.getElementById('pf-url').value.trim(),description:document.getElementById('pf-desc').value.trim(),tag:document.getElementById('pf-tag').value.trim(),color:document.getElementById('pf-color').value.trim()||'#00c853',visible:true});
+  ['pf-name','pf-url','pf-desc','pf-tag'].forEach(id=>document.getElementById(id).value='');
+  toggleAddForm('proj');loadProjects();loadPublicProjects();toast('Project added','success');
+};
+
+// ═══ LINKS ═══
+const loadLinks = async () => {
+  const data=await sbAdmin('GET','private_links','?order=created_at.asc');
+  const el=document.getElementById('links-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-family:var(--mono);font-size:12px">No links yet.</div>';return}
+  el.innerHTML=data.map(l=>`<div class="link-item">
+    <i class="ti ${esc(l.icon)||'ti-link'}"></i>
+    <span class="link-title">${esc(l.title)}</span>
+    <a href="${esc(l.url)}" target="_blank" class="link-url">${esc(l.url)}</a>
+    <span class="link-lock">private</span>
+    <button class="icon-btn danger" onclick="deleteLink(${l.id})"><i class="ti ti-trash"></i></button>
+  </div>`).join('');
+};
+const addLink = async () => {
+  const title=document.getElementById('lf-title').value.trim(),url=document.getElementById('lf-url').value.trim();
+  if(!title||!url)return toast('Title and URL required','error');
+  await sbAdmin('POST','private_links','',{title,url,icon:document.getElementById('lf-icon').value.trim()||'ti-link'});
+  ['lf-title','lf-url','lf-icon'].forEach(id=>document.getElementById(id).value='');
+  toggleAddForm('link');loadLinks();toast('Link added','success');
+};
+const deleteLink = async id => {if(!confirm('Delete?'))return;await sbAdmin('DELETE','private_links',`?id=eq.${id}`);loadLinks();toast('Deleted','error')};
+
+// ═══ TODOS ═══
+const loadTodos = async () => {
+  const data=await sbAdmin('GET','todos','?order=created_at.asc');
+  const el=document.getElementById('todos-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-family:var(--mono);font-size:12px">No tasks yet.</div>';return}
+  el.innerHTML=data.map(t=>`<div class="todo-item">
+    <input type="checkbox" class="todo-check" ${t.done?'checked':''} onchange="toggleTodo(${t.id},this.checked)">
+    <span class="todo-text${t.done?' done':''}">${esc(t.text)}</span>
+    <button class="icon-btn danger" onclick="deleteTodo(${t.id})"><i class="ti ti-x"></i></button>
+  </div>`).join('');
+};
+const loadHomeTodos = async () => {
+  const data=await sbAdmin('GET','todos','?order=created_at.asc&limit=4');
+  const el=document.getElementById('home-todos-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-size:12px;font-family:var(--mono)">No tasks.</div>';return}
+  el.innerHTML=data.map(t=>`<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">
+    <input type="checkbox" ${t.done?'checked':''} style="accent-color:var(--p)" onchange="toggleTodo(${t.id},this.checked)">
+    <span style="${t.done?'text-decoration:line-through;color:var(--muted)':''}">${esc(t.text)}</span>
+  </div>`).join('');
+};
+const toggleTodo = async (id,done) => {await sbAdmin('PATCH','todos',`?id=eq.${id}`,{done});loadTodos();loadHomeTodos()};
+const addTodo = async () => {
+  const text=document.getElementById('tf-text').value.trim();
+  if(!text)return toast('Task required','error');
+  await sbAdmin('POST','todos','',{text,done:false});
+  document.getElementById('tf-text').value='';
+  toggleAddForm('todo');loadTodos();loadHomeTodos();toast('Task added','success');
+};
+const deleteTodo = async id => {await sbAdmin('DELETE','todos',`?id=eq.${id}`);loadTodos();loadHomeTodos()};
+
+// ═══ NOTES ═══
+const loadNotes = async () => {
+  const data=await sbAdmin('GET','notes','?order=created_at.desc');
+  const el=document.getElementById('notes-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-family:var(--mono);font-size:12px">No notes yet.</div>';return}
+  el.innerHTML=data.map(n=>`<div class="note-item" style="border-left-color:${esc(n.color)||'var(--p)'}">
+    <div class="note-text">${esc(n.content)}</div>
+    <button class="icon-btn danger" onclick="deleteNote(${n.id})" style="flex-shrink:0"><i class="ti ti-trash"></i></button>
+  </div>`).join('');
+};
+const loadHomeNotes = async () => {
+  const data=await sbAdmin('GET','notes','?order=created_at.desc&limit=2');
+  const el=document.getElementById('home-notes-list');
+  if(!data||!data.length){el.innerHTML='<div style="color:var(--muted);font-size:12px;font-family:var(--mono)">No notes.</div>';return}
+  el.innerHTML=data.map(n=>`<div class="note-item" style="border-left-color:${esc(n.color)||'var(--p)'};font-size:12px;margin-bottom:8px">${esc(n.content)}</div>`).join('');
+};
+const addNote = async () => {
+  const content=document.getElementById('nf-content').value.trim();
+  if(!content)return toast('Content required','error');
+  await sbAdmin('POST','notes','',{content});
+  document.getElementById('nf-content').value='';
+  toggleAddForm('note');loadNotes();loadHomeNotes();toast('Note saved','success');
+};
+const deleteNote = async id => {await sbAdmin('DELETE','notes',`?id=eq.${id}`);loadNotes();loadHomeNotes()};
+
+// ═══ TELEGRAM ═══
+const sendTestTg = async () => {await tg(`✅ <b>Test — ayoub.pw dashboard</b>\n🕐 ${new Date().toLocaleString('en-AT',{timeZone:'Europe/Vienna'})}`);toast('Test sent','success')};
+const clearVisitors = async () => {if(!confirm('Delete ALL visitor records?'))return;await sbAdmin('DELETE','visitors','?id=gt.0');loadStats();loadHomeVisitors();toast('Cleared','error')};
+const toggleAddForm = type => document.getElementById(`${type}-add-form`).classList.toggle('show');
+
+// ═══ AI CHAT ═══
+const aiLog=[];let aiLoading=false;
+const addMsg=(text,type)=>{const box=document.getElementById('ai-messages');const d=document.createElement('div');d.className=`g-msg g-msg-${type}`;d.innerHTML=text;box.appendChild(d);box.scrollTop=box.scrollHeight};
+const showTyping=()=>{const box=document.getElementById('ai-messages');const d=document.createElement('div');d.className='g-typing';d.id='g-typing';d.innerHTML='<div class="g-td"></div><div class="g-td"></div><div class="g-td"></div>';box.appendChild(d);box.scrollTop=box.scrollHeight};
+const hideTyping=()=>{const el=document.getElementById('g-typing');if(el)el.remove()};
+const sendAI=async()=>{
+  if(aiLoading)return;
+  const inp=document.getElementById('ai-input');
+  const txt=inp.value.trim();if(!txt)return;
+  inp.value='';
+  document.getElementById('ai-suggestions').style.display='none';
+  addMsg(txt,'user');aiLog.push({role:'user',content:txt});
+  aiLoading=true;showTyping();
+  try{
+    const res=await fetch(`${SB}/functions/v1/ask-ayoub`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Authorization':`Bearer ${KEY}`},
+      body:JSON.stringify({messages:aiLog})
+    });
+    const data=await res.json();
+    const reply=data.reply||'Sorry, something went wrong.';
+    hideTyping();addMsg(reply,'ai');aiLog.push({role:'assistant',content:reply});
+  }catch(e){hideTyping();addMsg('Connection error. Please try again.','ai')}
+  aiLoading=false;
+};
+const askSug=el=>{document.getElementById('ai-input').value=el.textContent;sendAI()};
+
+// ═══ INIT ═══
+checkRoute();
+if(!location.hash.includes('admin')){
+  setTimeout(trackVisitor,1500);
+  loadPublicProjects();
+}
+</script>
+</body>
+</html>
